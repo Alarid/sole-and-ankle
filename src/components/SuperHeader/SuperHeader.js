@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 
-import { COLORS } from '../../constants';
+import { COLORS } from "../../constants"
 
-import SearchInput from '../SearchInput';
-import UnstyledButton from '../UnstyledButton';
-import Icon from '../Icon';
+import SearchInput from "../SearchInput"
+import UnstyledButton from "../UnstyledButton"
+import Icon from "../Icon"
 
 const SuperHeader = () => {
   return (
@@ -19,18 +19,23 @@ const SuperHeader = () => {
         <Icon id="shopping-bag" strokeWidth={1} />
       </UnstyledButton>
     </Wrapper>
-  );
-};
+  )
+}
 
 const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 25px;
   font-size: 0.875rem;
   color: ${COLORS.gray[300]};
   background-color: ${COLORS.gray[900]};
-`;
+  padding: 10px 30px;
+`
 
 const MarketingMessage = styled.span`
   color: ${COLORS.white};
-`;
+  margin-right: auto;
+`
 
 const HelpLink = styled.a`
   color: inherit;
@@ -40,6 +45,6 @@ const HelpLink = styled.a`
   &:not(:focus-visible) {
     outline: none;
   }
-`;
+`
 
-export default SuperHeader;
+export default SuperHeader
