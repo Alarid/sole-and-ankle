@@ -28,7 +28,7 @@ const Header = () => {
 
 const MainHeader = styled.div`
   display: flex;
-  align-items: center;
+  align-items: baseline;
   padding: 20px 32px;
   border-bottom: 1px solid ${COLORS.gray[300]};
 `

@@ -44,7 +44,15 @@ const ShoeCard = ({
         <Spacer size={12} />
         <Row>
           <Name>{name}</Name>
-          <Price>{formatPrice(price)}</Price>
+          <Price
+            style={{
+              "--color": variant === "on-sale" ? COLORS.gray[700] : undefined,
+              "--text-decoration":
+                variant === "on-sale" ? "line-through" : undefined,
+            }}
+          >
+            {formatPrice(price)}
+          </Price>
         </Row>
         <Row>
           <ColorInfo>{pluralize("Color", numOfColors)}</ColorInfo>
@@ -57,7 +65,6 @@ const ShoeCard = ({
 
 const Link = styled.a`
   text-decoration: none;
-  flex: 1 1 240px;
   color: inherit;
 `
 
@@ -79,7 +86,7 @@ const Flag = styled.div`
   padding: 7px 11px;
   color: white;
   font-weight: 700;
-  font-size: ${14 / 16}rem;
+  font-size: ${14 / 18}rem;
 `
 
 const NewReleaseLabel = styled(Flag)`
@@ -101,7 +108,10 @@ const Name = styled.h3`
   color: ${COLORS.gray[900]};
 `
 
-const Price = styled.span``
+const Price = styled.span`
+  color: var(--color);
+  text-decoration: var(--text-decoration);
+`
 
 const ColorInfo = styled.p`
   color: ${COLORS.gray[700]};
